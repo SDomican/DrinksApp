@@ -6,10 +6,6 @@ namespace DrinksApp.Drinks_info
     internal class TableVisualisationEngine
     {
 
-
-
-
-
         public static void ShowTable<T>(List<T> tableData, [AllowNull] string tableName) where T : class
         {
 
