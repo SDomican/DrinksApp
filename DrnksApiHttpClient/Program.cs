@@ -22,9 +22,15 @@ static async Task ProcessRepositoriesAsync(HttpClient client)
     var repositories =
         await JsonSerializer.DeserializeAsync<DrinksRepository>(stream);
 
+    List<String> categories = new List<string>();
+
     foreach (DrinksCategory category in repositories.drinkCategories)
     {
-        Console.WriteLine(category.drinkCategory);
+        categories.Add(category.drinkCategory);
+        //Console.WriteLine(category.drinkCategory);
     }
 
+    ConsoleTableBuilder
+    .From(categories)
+    .ExportAndWriteLine();
 }
