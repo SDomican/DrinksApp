@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using ConsoleTableExt;
+using DrinksApiHttpClient;
 
 using HttpClient client = new();
 client.DefaultRequestHeaders.Accept.Clear();
@@ -27,10 +28,11 @@ static async Task ProcessRepositoriesAsync(HttpClient client)
     foreach (DrinksCategory category in repositories.drinkCategories)
     {
         categories.Add(category.drinkCategory);
-        //Console.WriteLine(category.drinkCategory);
     }
 
     ConsoleTableBuilder
     .From(categories)
     .ExportAndWriteLine();
+
+    UserInput.GetInput();
 }

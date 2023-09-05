@@ -7,15 +7,24 @@ using System.Threading.Tasks;
 
 namespace DrnksApiHttpClient
 {
-    internal class DrinksRepository
+    internal record DrinksRepository
     {
         [JsonPropertyName("drinks")]
         public DrinksCategory[] drinkCategories { get; set; }
     }
 
-    public class DrinksCategory
+    internal record DrinksCategory
     {
         [JsonPropertyName("strCategory")]
         public String drinkCategory { get; set; }
+    }
+
+    internal record Drink
+    {
+        [JsonPropertyName("strCategory")]
+        public String drinkCategory { get; set; }
+
+        [JsonPropertyName("idDrink")]
+        public int idCategory { get; set; }
     }
 }
