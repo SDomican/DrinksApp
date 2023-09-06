@@ -19,12 +19,18 @@ namespace DrnksApiHttpClient
         public String drinkCategory { get; set; }
     }
 
+    internal record DrinksCategoryRepository
+    {
+        [JsonPropertyName("drinks")]
+        public Drink[] drinkCategories { get; set; }
+    }
+
     internal record Drink
     {
-        [JsonPropertyName("strCategory")]
-        public String drinkCategory { get; set; }
+        [JsonPropertyName("strDrink")]
+        public string drinkCategory { get; set; }
 
         [JsonPropertyName("idDrink")]
-        public int idCategory { get; set; }
+        public string idCategory { get; set; }
     }
 }

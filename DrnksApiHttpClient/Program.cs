@@ -34,5 +34,5 @@ static async Task ProcessRepositoriesAsync(HttpClient client)
     .From(categories)
     .ExportAndWriteLine();
 
-    UserInput.GetInput();
+    await UserInput.GetInput();
 }

@@ -10,7 +10,7 @@ namespace DrinksApiHttpClient
     public static class UserInput
     {
         
-        public static async void GetInput()
+        public static async Task GetInput()
         {
             DrinksService drinksService = new DrinksService();
 
